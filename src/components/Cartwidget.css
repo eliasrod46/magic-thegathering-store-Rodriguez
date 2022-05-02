@@ -1,0 +1,7 @@
+.cart_widget--container {
+  margin: 34px 8px;
+}
+
+.cart_widget--container .cart_widget {
+  width: 25px;
+}
