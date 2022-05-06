@@ -1,13 +1,12 @@
-import "./NavBar.css";
-import logo from "../img/logo.png";
-import CartWidget from "./Cartwidget";
+import "./styles.css";
+import CartWidget from "../CartWidget";
 
 function NavBar() {
   return (
     <div>
       <nav className="NavBar">
         <div className="logo__container">
-          <img src={logo} className="logo" alt="logo" />
+          <img src="/img/logo.png" className="logo" alt="logo" />
           <h3>Magic The Gathering</h3>
         </div>
         <ul className="list">
@@ -36,14 +35,13 @@ function NavBar() {
         <div className="user__buttons--container">
           <CartWidget />
           <ButtonLogin />
-          
         </div>
       </nav>
     </div>
   );
 }
 
-function ButtonLogin(){
-  return(<button className="button login">Login</button>);
+function ButtonLogin() {
+  return <button className="button login">Login</button>;
 }
 export default NavBar;
