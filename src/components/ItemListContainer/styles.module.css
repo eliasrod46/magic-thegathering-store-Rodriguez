@@ -1,13 +1,13 @@
-.texto_prueba {
+.titulo {
   font-family:cursive;
   text-align: center;
-  text-shadow: 0px 0px 5px red;
+  text-shadow: 0px 0px 5px #fff;
   color: #222;
   transition: all 500ms;
 }
 
-.texto_prueba:hover {
+.titulo:hover {
   text-align: center;
-  text-shadow: 0px 0px 20px red;
+  text-shadow: 0px 0px 20px #fff;
   color: #222;
 }

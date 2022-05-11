@@ -1,16 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tillana:wght@400;500;700&family=Yusei+Magic&display=swap");
+
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Tillana', cursive;
+font-family: 'Yusei Magic', sans-serif;
+*/
+
 .card_container {
-  margin: 15px auto;
+  margin: 0 auto;
   width: 200px;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgb(1, 3, 158);
-  background-color: #aaa;
+  box-shadow: 0 0 20px rgb(185, 186, 235);
+  background-color: rgb(119, 119, 119);
   padding: 15px;
   overflow: hidden;
 }
 
 .card_container .card_container_title {
   margin-top: 0px;
-  font-family: cursive;
+  font-family: 'Tillana', cursive;
+
 }
 
 .card_container .card_container_title,

@@ -18,36 +18,26 @@ const Itemcount = ({ stock, initial }) => {
 
   return (
     <div className={s.card_container}>
-      <h3 className={s.card_container_title}>Tierra Basica - Llanura</h3>
+      <h3 className={s.card_container_title}>Articulo</h3>
       <div className={s.card_container_stock}>
         {stock == 0 ? "Articulo sin stock" : ""}
       </div>
 
-      <div className={s.card_container_img}>
-        <img
-          className={s.card_img}
-          src="/img/productos/mana_llanura.jpg"
-          alt="tierra llanura"
-        />
-      </div>
-
-      <p className={s.card_container_desc}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus,
-        fuga!
-      </p>
+          
 
       <div className={s.card_container_count}>
         <button
-          disabled={stock == 0 ? "disable" : ""}
+          disabled={cant <= 0}
           className={s.count_down}
           onClick={handleClickDown}
         >
           -
         </button>
+
         <span className={s.count_data}>{cant}</span>
 
         <button
-          disabled={stock == 0 ? "disable" : ""}
+          disabled={cant >= stock}
           className={s.count_up}
           onClick={handleClickUp}
         >
@@ -55,7 +45,7 @@ const Itemcount = ({ stock, initial }) => {
         </button>
       </div>
       <div className={s.card_container_send}>
-        <button disabled={stock == 0 ? "disable" : ""} className={s.card_send}>
+        <button disabled={stock == 0 || cant == 0} className={s.card_send}>
           Agregar Al carrito
         </button>
       </div>

@@ -1,14 +1,16 @@
+//css
 import "./App.css";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemCount from "./components/ItemCount";
+//import components
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemCount from "./components/ItemCount/ItemCount";
 
 function App() {
   return (
-    <div>
+    <div className="body_container">
       <NavBar />
-      <ItemListContainer greeting="Maqueta de La Lista de items" />
-      <ItemCount stock={1} initial={1} />
+      <ItemListContainer greeting="Magic The Gathering - Wizard of the Coast" />
+      <ItemCount stock={5} initial={1} />
     </div>
   );
 }
