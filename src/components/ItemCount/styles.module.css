@@ -9,6 +9,8 @@
 }
 
 .card_container .card_container_title {
+  font-size: 15px;
+  font-weight: 100;
   margin-top: 0px;
   font-family: cursive;
 }

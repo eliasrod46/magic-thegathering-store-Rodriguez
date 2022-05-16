@@ -1,6 +1,6 @@
 //css
 import styles from "./styles.module.css";
-
+//import components
 import ItemList from "../ItemList/ItemList";
 import items from "../../productos";
 import { useState, useEffect } from "react";

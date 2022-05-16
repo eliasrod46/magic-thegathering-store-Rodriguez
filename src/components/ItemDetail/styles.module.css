@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tillana:wght@400;500;700&family=Yusei+Magic&display=swap");
+
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Tillana', cursive;
+font-family: 'Yusei Magic', sans-serif;
+*/
+
+
+.detail_container {
+  display: grid;
+  grid-template-areas: "img data";
+}
+
+.detail_container .detail_img {
+  grid-area: img;
+  text-align: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.detail_container .detail_img img {
+  margin: 65px 120px;
+}
+
+.detail_container .detail_data {
+  grid-area: data;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.336);
+}
+
+.detail_container .detail_data .title{
+  margin: 20px auto;
+  width: 30%;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Tillana', cursive;
+}
+
+.detail_container .detail_data .description{
+  margin: 30px auto;
+  width: 90%;
+  font-family: 'Yusei Magic', sans-serif;
+
+}
+
+.detail_container .detail_data .price{
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 30px;
+   
+  text-align: center;
+
+}
+

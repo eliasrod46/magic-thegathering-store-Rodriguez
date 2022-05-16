@@ -18,7 +18,7 @@ const Itemcount = ({ stock, initial }) => {
 
   return (
     <div className={s.card_container}>
-      <h3 className={s.card_container_title}>Articulo</h3>
+      <h3 className={s.card_container_title}>Stock Disponible: {stock}</h3>
       <div className={s.card_container_stock}>
         {stock == 0 ? "Articulo sin stock" : ""}
       </div>
