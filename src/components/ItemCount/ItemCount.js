@@ -23,11 +23,9 @@ const Itemcount = ({ stock, initial }) => {
         {stock == 0 ? "Articulo sin stock" : ""}
       </div>
 
-          
-
       <div className={s.card_container_count}>
         <button
-          disabled={cant <= 0}
+          disabled={cant <= 0 || stock == 0}
           className={s.count_down}
           onClick={handleClickDown}
         >

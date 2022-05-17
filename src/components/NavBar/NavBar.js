@@ -1,36 +1,39 @@
 //css
 import "./styles.css";
 //import components
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div>
       <nav className="NavBar">
-        <div className="logo__container">
-          <img src="/img/logo.png" className="logo" alt="logo" />
-          <h3>Magic The Gathering</h3>
-        </div>
+        <Link className="Link" to="/">
+          <div className="logo__container">
+            <img src="/img/logo.png" className="logo" alt="logo" />
+            <h3 className="title">Magic The Gathering</h3>
+          </div>
+        </Link>
         <ul className="list">
           <li className="list__item">
-            <a className="list__link" href="#">
+            <Link to="/" className="list__link" href="#">
               Inicio
-            </a>
+            </Link>
           </li>
           <li className="list__item">
-            <a className="list__link" href="#">
+            <Link to="/category/cartas" className="list__link" href="#">
               Cartas
-            </a>
+            </Link>
           </li>
           <li className="list__item">
-            <a className="list__link" href="#">
+            <Link to="/category/sobres" className="list__link" href="#">
               Sobres
-            </a>
+            </Link>
           </li>
           <li className="list__item">
-            <a className="list__link" href="#">
-              Pack de inicio
-            </a>
+            <Link to="/category/pack" className="list__link" href="#">
+              Pack's de inicio
+            </Link>
           </li>
         </ul>
 

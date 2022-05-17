@@ -1,34 +1,25 @@
 //css
 import styles from "./styles.module.css";
 //import components
-import ItemList from "../ItemList/ItemList";
-import items from "../../productos";
+import ItemList from "./ItemList";
+import {getItems} from "../../productos";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
 function ItemListContainer({ greeting }) {
   //defino state productos
   const [productos, setProductos] = useState([]);
+  //guardo parametro recibido por url
+  const { id } = useParams();
+  //Simulo demora en consula de bbdd
+  useEffect(() => {
+    getItems(id)
+    .then((res)=>{
 
-    //Simulo demora en consula de bbdd
-    useEffect(() => {
-      setTimeout(() => {
-      //promesa que va a devolver el array de items
-      const data = new Promise((res, rej) => {
-        res(items);
-      });
+        setProductos(res)
 
-      data
-        .then((data) => {
-          //guardo la respuesta de la promesa en el state product
-          setProductos(data);
-        })
-        .catch((err) => {
-          //manejo de errores
-          console.log({ "error: ": err });
-        });
-      }, 2000);
-    }, []); //se va a ejecutar una sola vez
-
+    })
+  }, [id]); //se va a ejecutar una sola vez
 
   return (
     <div>

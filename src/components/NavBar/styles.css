@@ -13,17 +13,31 @@ font-family: 'Yusei Magic', sans-serif;
 }
 
 /* Logo */
+
+.NavBar .Link {
+  text-decoration: none;
+}
+
 .NavBar .logo__container {
   margin: auto 15px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 .NavBar .logo__container .logo {
   width: 70px;
+  height: 70px;
+  margin: 0 auto;
   border-radius: 40px;
-  margin-right: 15px;
+  padding: 14px;
+}
+
+.NavBar .logo__container .title {
+  color: #222;
+  text-align: center;
+  margin: auto;
 }
 
 /* Links */
@@ -34,9 +48,10 @@ font-family: 'Yusei Magic', sans-serif;
 
 .NavBar .list .list__item {
   list-style: none;
-  margin: 25px;
+  margin: auto 25px;
   text-shadow: 0px 0px 0px green, 0px 0px 0px green;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .NavBar .list .list__item :hover {
@@ -59,7 +74,6 @@ font-family: 'Yusei Magic', sans-serif;
   margin: auto 25px;
   height: 100%;
 }
-
 
 /* --------------------------Loggin Button-------------------------- */
 .button {
@@ -99,3 +113,11 @@ font-family: 'Yusei Magic', sans-serif;
   transform: scale(1);
 }
 /* / --------------------------Loggin Button-------------------------- */
+
+.cart_widget_container {
+  margin: 34px 8px;
+}
+
+.cart_widget_container .cart_widget {
+  width: 25px;
+}
