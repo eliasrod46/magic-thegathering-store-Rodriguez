@@ -23,6 +23,11 @@ function App() {
           />
 
           <Route path="/item/:id" element={<ItemDetailContainer />} />
+
+          <Route
+            path="/cart"
+            element={<h1>holis</h1>}
+          />
         </Routes>
       </div>
     </Router>

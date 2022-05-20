@@ -16,22 +16,22 @@ function NavBar() {
         </Link>
         <ul className="list">
           <li className="list__item">
-            <Link to="/" className="list__link" href="#">
+            <Link to="/" className="list__link">
               Inicio
             </Link>
           </li>
           <li className="list__item">
-            <Link to="/category/cartas" className="list__link" href="#">
+            <Link to="/category/cartas" className="list__link">
               Cartas
             </Link>
           </li>
           <li className="list__item">
-            <Link to="/category/sobres" className="list__link" href="#">
+            <Link to="/category/sobres" className="list__link">
               Sobres
             </Link>
           </li>
           <li className="list__item">
-            <Link to="/category/pack" className="list__link" href="#">
+            <Link to="/category/pack" className="list__link">
               Pack's de inicio
             </Link>
           </li>

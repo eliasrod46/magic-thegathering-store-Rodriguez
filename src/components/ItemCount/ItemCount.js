@@ -1,8 +1,8 @@
 import s from "./styles.module.css";
 import { useState } from "react";
 
-const Itemcount = ({ stock, initial }) => {
-  const [cant, setCant] = useState(initial);
+const Itemcount = ({ stock, compra }) => {
+  const [cant, setCant] = useState(0);
 
   const handleClickUp = () => {
     if (cant < stock) {
@@ -20,12 +20,12 @@ const Itemcount = ({ stock, initial }) => {
     <div className={s.card_container}>
       <h3 className={s.card_container_title}>Stock Disponible: {stock}</h3>
       <div className={s.card_container_stock}>
-        {stock == 0 ? "Articulo sin stock" : ""}
+        {stock === 0 ? "Articulo sin stock" : ""}
       </div>
 
       <div className={s.card_container_count}>
         <button
-          disabled={cant <= 0 || stock == 0}
+          disabled={cant <= 0 || stock === 0}
           className={s.count_down}
           onClick={handleClickDown}
         >
@@ -43,7 +43,11 @@ const Itemcount = ({ stock, initial }) => {
         </button>
       </div>
       <div className={s.card_container_send}>
-        <button disabled={stock == 0 || cant == 0} className={s.card_send}>
+        <button
+          onClick={() => compra(cant)}
+          disabled={stock === 0 || cant === 0}
+          className={s.card_send}
+        >
           Agregar Al carrito
         </button>
       </div>
