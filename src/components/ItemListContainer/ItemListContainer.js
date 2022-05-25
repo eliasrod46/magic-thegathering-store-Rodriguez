@@ -5,10 +5,13 @@ import ItemList from "./ItemList";
 import { getItems } from "../../productos";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import Spiner from "../Spiner/Spiner";
 
 function ItemListContainer({ greeting }) {
-  //defino state productos
+  //defino states
   const [productos, setProductos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   //guardo parametro recibido por url
   const { id } = useParams();
   //Simulo demora en consula de bbdd
@@ -16,12 +19,12 @@ function ItemListContainer({ greeting }) {
     getItems(id).then((res) => {
       setProductos(res);
     });
-  }, [id]); //se va a ejecutar una sola vez
+    setIsLoading(false);
+  }, [id]); //se va a ejecutar cada vez que cambie id(la categoria)
 
   return (
     <div>
       <h1 className={styles.titulo}>{greeting}</h1>
-
       <ItemList items={productos} />
     </div>
   );
