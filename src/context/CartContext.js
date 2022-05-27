@@ -2,37 +2,50 @@ import {createContext, useState} from 'react'
 
 export const CartContext = createContext()
 
-const productosAgregados = []
-
 export const CartProvider = ({children}) => {
+  //States
+  const [items, setItems] = useState([])
+
+  //functions
+
+  //*Agregar producto
+  const addItem = (data) => {
+    let found = undefined
 
 
-  const addItem = (id, item, price, pictureUrl, category, quantity) => {
-
-
+    //*Armo objeto con los datos recibidos
     const newProduct = {
-      id: id,
-      title: item,
-      price: price,
-      pictureUrl: pictureUrl,
-      category: category,
-      quantity: quantity
+      id: data.id,
+      title: data.title,
+      price: data.price,
+      pictureUrl: data.imgpath,
+      category: data.category,
+      quantity: Number(data.quantity)
     }
 
-    const found = items.find(item => item.id == id);
+    //Busco si el articulo ya esta agregado
+    items.forEach((item,index)=>{
+      if(item.id == data.id){
+        found = index
+      }
+    })
+    
 
-    if(!found){
-      productosAgregados.push(newProduct)
-      setItems(productosAgregados)
-
+    //Verifico si existe el producto para agregarlo al estado o modificarlo
+    if(found == undefined){
+      items.push(newProduct)
+      setItems(items)
+      console.log('El producto fue agregado')
       console.log(items)
     }else{
-      console.log('El producto ya se encuentra en el carrito y no se puede volver a agregar')
-
-      
+      items[found].quantity += Number(data.quantity)
+      setItems(items)
+      console.log('El producto fue modificado')
+      console.log(items)
     }
   }
 
+  //*Elimino producto
   const removeItem = (itemId) => {
 
     let found = false
@@ -44,18 +57,20 @@ export const CartProvider = ({children}) => {
     });
 
     if(found){
-      const arrayNuevo = productosAgregados.splice(found, 1)
-      setItems(arrayNuevo)
+      items.splice(found, 1)
+      setItems(items)
     }else{
       console.log("Producto no encontrado")
     }
     
   }
 
+  //*Elimino todo los elementos del carrito
   const clear = () =>[
     setItems([]) 
   ]
 
+  //*Consulto por la existencia de un producto en el carrito
   const isInCart = (id) =>{
     const found = items.find(item => item.id == id);
 
@@ -65,10 +80,6 @@ export const CartProvider = ({children}) => {
       return false
     }
   } 
-
-
-  const [items, setItems] = useState(productosAgregados)
-  
 
   return(
     <CartContext.Provider value={[addItem, removeItem, clear, isInCart]}>

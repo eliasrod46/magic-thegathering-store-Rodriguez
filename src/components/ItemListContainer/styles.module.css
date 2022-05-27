@@ -85,3 +85,8 @@ font-family: 'Yusei Magic', sans-serif;
   color: #222;
   text-decoration: none;
 }
+
+.spiner_container{
+  display: inline-block;
+  margin: 35px 50%;
+}

@@ -1,15 +1,18 @@
 import s from "./styles.module.css";
 import { useState } from "react";
 
+//*Componente contador de stock
 const Itemcount = ({ stock, compra }) => {
   const [cant, setCant] = useState(0);
 
+  //*funcion boton suma cantidad a comprar
   const handleClickUp = () => {
     if (cant < stock) {
       setCant(cant + 1);
     }
   };
 
+  //*funcion boton resta cantidad a comprar
   const handleClickDown = () => {
     if (cant > 0) {
       setCant(cant - 1);

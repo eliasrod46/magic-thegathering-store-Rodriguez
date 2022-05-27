@@ -1,8 +1,7 @@
-// return "(Item)Mostrar informacion brebe del producto que el user clickeara luego para acceder a los detalles(aca va una cardo como la de itemcount)";
-
 import style from "./styles.module.css";
 import { useState } from "react";
 
+//*Componente donde hago la maquetacion con la info recibida de itemlist
 const Item = ({ data }) => {
   return (
     <div className={style.card_container}>

@@ -1,7 +1,7 @@
 import cart from "../../img/cart.png";
 import style from "./styles.css";
 
-/* VER REACT ICONS!!!!! */
+//Componente icono Carrito de compras
 const CartWidget = () => {
   return (
     <div className="cart_widget_container">

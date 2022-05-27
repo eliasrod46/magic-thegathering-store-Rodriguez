@@ -4,6 +4,7 @@ import "./styles.css";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
+//Componente barra de navegacion
 function NavBar() {
   return (
     <div>

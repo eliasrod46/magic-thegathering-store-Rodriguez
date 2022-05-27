@@ -76,3 +76,8 @@ font-family: 'Yusei Magic', sans-serif;
 .detail_container .detail_data .container_btn_buy .btn_buy :hover {
   color: red;
 }
+
+.spiner_container{
+  display: inline-block;
+  margin: 35px 50%;
+}

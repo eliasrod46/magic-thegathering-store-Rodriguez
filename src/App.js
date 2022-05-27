@@ -15,18 +15,23 @@ function App() {
         <div className="body_container">
           <NavBar />
           <Routes>
+
+            {/* Ruta - raiz(Todos los articulos) */}
             <Route
               path="/"
               element={<ItemListContainer greeting="Agregados recientemente" />}
             />
 
+            {/* Ruta - categorias(articulos de uan categoria) */}
             <Route
               path="/category/:id"
               element={<ItemListContainer greeting="Articulos" />}
             />
 
+            {/* Ruta - vista detalle */}
             <Route path="/item/:id" element={<ItemDetailContainer />} />
 
+            {/* Ruta - carrito */}
             <Route
               path="/cart"
               element={<h1>Carrito de compras</h1>}
