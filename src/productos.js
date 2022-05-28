@@ -90,7 +90,7 @@ export const getItem = (id) => {
         }
       });
       reject({ mensaje: "Articulo no encontrado" });
-    }, 20);
+    }, 2000);
   });
 };
 
@@ -110,7 +110,7 @@ export const getItems = (id) => {
           resolve(categroyitems);
 
       }
-    }, 20);
+    }, 2000);
   });
 
 
