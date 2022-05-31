@@ -116,8 +116,14 @@ font-family: 'Yusei Magic', sans-serif;
 
 .cart_widget_container {
   margin: 34px 8px;
+  display: flex;
 }
 
 .cart_widget_container .cart_widget {
   width: 25px;
 }
+
+.items{
+  margin: 5px;
+}
+

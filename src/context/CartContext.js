@@ -1,5 +1,7 @@
 import {createContext, useState} from 'react'
 
+
+
 export const CartContext = createContext()
 
   export const CartProvider = ({children}) => {
@@ -7,7 +9,7 @@ export const CartContext = createContext()
   const [items, setItems] = useState([])
 
   //functions
-
+ 
   //*Agregar producto
   const addItem = (data) => {
     let found = undefined
@@ -47,22 +49,26 @@ export const CartContext = createContext()
 
   //*Elimino producto
   const removeItem = (itemId) => {
-
+   
     let found = false
     
-    items.forEach((item, index, arr) => {
+    items.forEach((item, index) => {
       if(item.id == itemId){
         found = index
       }
     });
 
-    if(found){
+    
+    if(found !== false){
       items.splice(found, 1)
       setItems(items)
     }else{
       console.log("Producto no encontrado")
     }
-    
+
+
+
+
   }
 
   //*Elimino todo los elementos del carrito
@@ -82,7 +88,7 @@ export const CartContext = createContext()
   } 
 
   return(
-    <CartContext.Provider value={[addItem, removeItem, clear, isInCart]}>
+    <CartContext.Provider value={[addItem, removeItem, clear, isInCart, items]}>
       {children}
     </CartContext.Provider>
   )

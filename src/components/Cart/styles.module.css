@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tillana:wght@400;500;700&family=Yusei+Magic&display=swap");
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Tillana', cursive;
+font-family: 'Yusei Magic', sans-serif;
+*/
+
+/* Titulo */
+
+
+.h1{
+    color: white;
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: 300;
+  }
+
+.itemsContainer{
+    background-color: rgba(255, 255, 255, 0.301);
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    box-shadow: 0 0 9px white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* tabla */
+
+.th{
+    text-align: center;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    padding: 8px;
+}
+.td{
+    text-align: center;
+    border-bottom: 3px solid black;
+    padding: 4px;
+    font-family: 'Yusei Magic', sans-serif;
+
+}
+
+
+  
+.button_del{
+  text-decoration: none;
+  font-size: 12px;
+  background-color: red;
+  border-radius: 8px;
+  padding: 2px;
+  box-shadow: 0 0 5px white;
+  color: black;
+  font-family: 'Tillana', cursive;
+  font-weight: 800;
+}
+.button_del:hover{
+    box-shadow: 0 0 5px black inset, 0 0 5px white;
+    cursor: pointer;    
+}
+
+/* Boton */
+
+.button_container{
+  margin-top: 55px;
+  text-align: center;
+}
+
+.button{
+  text-decoration: none;
+  font-size: 20px;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 0 5px white;
+  color: black;
+  font-family: 'Tillana', cursive;
+  font-weight: 500;
+}
+
+.button:hover{
+  box-shadow: 0 0 5px black inset, 0 0 5px white;
+  
+}
+
+/* Total */
+.total{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: 800;
+}

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
+import Del from "./components/Del/Del";
 //Providers
 import {CartProvider} from "./context/CartContext"
 
@@ -34,7 +36,13 @@ function App() {
             {/* Ruta - carrito */}
             <Route
               path="/cart"
-              element={<h1>Carrito de compras</h1>}
+              element={<Cart/>}
+            />
+
+            {/* Ruta - articulo eliminado */}
+            <Route
+              path="/del"
+              element={<Del/>}
             />
           </Routes>
         </div>
