@@ -36,12 +36,12 @@ export const CartContext = createContext()
     //Verifico si existe el producto para agregarlo al estado o modificarlo
     if(found == undefined){
       items.push(newProduct)
-      setItems(items)
+      setItems([...items])
       console.log('El producto fue agregado')
       console.log(items)
     }else{
       items[found].quantity += Number(data.quantity)
-      setItems(items)
+      setItems([...items])
       console.log('El producto fue modificado')
       console.log(items)
     }
@@ -61,7 +61,7 @@ export const CartContext = createContext()
     
     if(found !== false){
       items.splice(found, 1)
-      setItems(items)
+      setItems([...items])
     }else{
       console.log("Producto no encontrado")
     }
@@ -87,8 +87,17 @@ export const CartContext = createContext()
     }
   } 
 
+  //*Consulto por la existencia de un producto en el carrito
+  const devuleveCantItems = () =>{
+    const cantProd = items.reduce(
+      (total, item) => (total = total + item.quantity),
+      0
+    );
+    return cantProd;
+  } 
+
   return(
-    <CartContext.Provider value={[addItem, removeItem, clear, isInCart, items]}>
+    <CartContext.Provider value={[addItem, removeItem, clear, isInCart, devuleveCantItems,items]}>
       {children}
     </CartContext.Provider>
   )

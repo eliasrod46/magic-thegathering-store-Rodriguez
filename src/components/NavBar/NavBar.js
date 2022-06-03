@@ -3,9 +3,15 @@ import "./styles.css";
 //import components
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import { useContext} from "react";
 
 //Componente barra de navegacion
 function NavBar() {
+
+  const [addItem, removeItem, clear, isInCart, devuleveCantItems,items] = useContext(CartContext)
+
+
   return (
     <div>
       <nav className="NavBar">
@@ -39,7 +45,9 @@ function NavBar() {
         </ul>
 
         <div className="user__buttons--container">
-          <CartWidget />
+          {items.length > 0 && <CartWidget />}
+
+          
           <ButtonLogin />
         </div>
       </nav>

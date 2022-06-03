@@ -7,7 +7,7 @@ import style from './styles.module.css'
 
 const Cart = props => {
 
-  const [addItem, removeItem, clear, isInCart, items] = useContext(CartContext)
+  const [addItem, removeItem, clear, isInCart, devuleveCantItems,items] = useContext(CartContext)
   const [show,setShow] = useState(false)
   const [total,settotal] = useState(0)
   useEffect(() => {
