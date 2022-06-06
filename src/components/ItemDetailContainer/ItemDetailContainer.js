@@ -3,9 +3,11 @@ import styles from "./styles.module.css";
 //import components
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
-import { getItem } from "../../productos";
 import { useParams } from "react-router";
 import Spiner from "../Spiner/Spiner";
+//Firebase
+import { collection, query, getDocs, where } from 'firebase/firestore'
+import { db } from '../../firebase/firebaseConfig'
 
 //*Componente donde pido datos de producto y envio a item detail
 const ItemDetailContainer = () => {
@@ -18,11 +20,22 @@ const ItemDetailContainer = () => {
   //Simulo consula en bbdd
   useEffect(() => {
     setIsLoading(true)
-    getItem(id).then((res) => {
-      setProducto(res);
-      setIsLoading(false)
 
-    });
+    const getAlbums = async () => {
+      let docs;
+      const q = query(collection(db,'productos'))
+      const querySnapshot = await getDocs(q)
+      querySnapshot.forEach(doc => {
+        if(doc.id == id){
+          docs= {...doc.data(), id: doc.id}
+        }
+        
+      });
+      setProducto(docs)
+      setIsLoading(false);
+
+    }
+    getAlbums()
   }, []);
 
   return (

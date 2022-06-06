@@ -2,10 +2,12 @@
 import styles from "./styles.module.css";
 //import components
 import ItemList from "./ItemList";
-import { getItems } from "../../productos";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Spiner from "../Spiner/Spiner";
+//Firebase
+import { collection, query, getDocs, where } from 'firebase/firestore'
+import { db } from '../../firebase/firebaseConfig'
 
 
 //Contenedor lista de productos
@@ -18,13 +20,36 @@ function ItemListContainer({ greeting }) {
   //guardo parametro recibido por url
   const { id } = useParams();
 
-  //Simulo consula en bbdd
+  //consulto a la bbdd
   useEffect(() => {
     setIsLoading(true)
-    getItems(id).then((res) => {
-      setProductos(res);
-      setIsLoading(false);
-    });
+    const getAlbums = async () => {
+      //Si viene id de categoria por paramentro
+      if (id) {
+        const q = query(collection(db,'productos'),where('category', "==", id))
+        const docs = [];
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach(doc => {
+          docs.push({...doc.data(), id: doc.id})
+        });
+        setProductos(docs)
+        setIsLoading(false);
+      }
+      //Si NO viene id de categoria por paramentro
+      else{
+        const q = query(collection(db,'productos'))
+        const docs = [];
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach(doc => {
+          docs.push({...doc.data(), id: doc.id})
+        });
+        setProductos(docs)
+        setIsLoading(false);
+      }
+      
+
+    }
+    getAlbums()
   }, [id]); //se va a ejecutar cada vez que cambie id(la categoria)
 
   return (

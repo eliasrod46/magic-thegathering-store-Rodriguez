@@ -10,7 +10,11 @@ import Del from "./components/Del/Del";
 //Providers
 import {CartProvider} from "./context/CartContext"
 
+
+
 function App() {
+
+
   return (
     <CartProvider>
       <Router>
