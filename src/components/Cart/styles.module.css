@@ -91,3 +91,25 @@ font-family: 'Yusei Magic', sans-serif;
     font-size: 25px;
     font-weight: 800;
 }
+
+
+/* form */
+
+.form{
+  margin: 0 auto;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form .input{
+  width: 300px;
+  margin: 10px;
+}
+
+.form .button_form{
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+

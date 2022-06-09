@@ -23,7 +23,7 @@ function ItemListContainer({ greeting }) {
   //consulto a la bbdd
   useEffect(() => {
     setIsLoading(true)
-    const getAlbums = async () => {
+    const getProductoss = async () => {
       //Si viene id de categoria por paramentro
       if (id) {
         const q = query(collection(db,'productos'),where('category', "==", id))
@@ -49,7 +49,7 @@ function ItemListContainer({ greeting }) {
       
 
     }
-    getAlbums()
+    getProductoss()
   }, [id]); //se va a ejecutar cada vez que cambie id(la categoria)
 
   return (
