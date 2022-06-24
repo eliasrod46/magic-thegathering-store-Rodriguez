@@ -1,7 +1,7 @@
 import {createContext, useState} from 'react'
 
 
-
+//contexto donde guardo la info del carrito de compras
 export const CartContext = createContext()
 
   export const CartProvider = ({children}) => {
@@ -12,7 +12,7 @@ export const CartContext = createContext()
  
   //*Agregar producto
   const addItem = (data) => {
-    let found = undefined
+    let found = -1
 
 
     //*Armo objeto con los datos recibidos
@@ -27,39 +27,40 @@ export const CartContext = createContext()
 
     //Busco si el articulo ya esta agregado
     items.forEach((item,index)=>{
-      if(item.id == data.id){
+      if(Number(item.id) === Number(data.id)){
         found = index
       }
     })
     
 
     //Verifico si existe el producto para agregarlo al estado o modificarlo
-    if(found == undefined){
+    if(found === -1){
       items.push(newProduct)
       setItems([...items])
       console.log('El producto fue agregado')
-      console.log(items)
     }else{
       items[found].quantity += Number(data.quantity)
       setItems([...items])
       console.log('El producto fue modificado')
-      console.log(items)
     }
   }
 
   //*Elimino producto
   const removeItem = (itemId) => {
    
-    let found = false
+    let found = -1
+
+
     
     items.forEach((item, index) => {
-      if(item.id == itemId){
+      if(item.id === itemId){
         found = index
       }
     });
 
+
     
-    if(found !== false){
+    if(found !== -1){
       items.splice(found, 1)
       setItems([...items])
     }else{
@@ -78,7 +79,7 @@ export const CartContext = createContext()
 
   //*Consulto por la existencia de un producto en el carrito
   const isInCart = (id) =>{
-    const found = items.find(item => item.id == id);
+    const found = items.find(item => Number(item.id) === Number(id));
 
     if(found){
       return true

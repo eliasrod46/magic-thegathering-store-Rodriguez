@@ -1,5 +1,5 @@
 import style from "./styles.module.css";
-import { useState } from "react";
+
 
 //*Componente donde hago la maquetacion con la info recibida de itemlist
 const Item = ({ data }) => {
@@ -17,7 +17,7 @@ const Item = ({ data }) => {
         <button className={style.card_send}>Ver detalle del producto</button>
       </div>
       <div className={style.card_container_stock}>
-        {data.stock == 0
+        {data.stock === 0
           ? "Articulo sin stock"
           : `Stock disponible: ${data.stock}`}
       </div>

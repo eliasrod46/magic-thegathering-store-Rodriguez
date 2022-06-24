@@ -46,6 +46,7 @@ const Itemcount = ({ stock, compra }) => {
         </button>
       </div>
       <div className={s.card_container_send}>
+        {/* boton que ejecuta la fucion onAdd */}
         <button
           onClick={() => compra(cant)}
           disabled={stock === 0 || cant === 0}

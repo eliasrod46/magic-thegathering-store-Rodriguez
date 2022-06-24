@@ -15,21 +15,29 @@ const initialState={
 }
 
 const Cart = props => {
+  // context carrito de compras
   const [addItem, removeItem, clear, isInCart, devuleveCantItems,items] = useContext(CartContext)
+  //estado bandera para mostrar pantalla sin items
   const [show,setShow] = useState(false)
+  // estado para guardar el total a pagar
   const [total,settotal] = useState(0)
+  //estado para guardar los datos del comprador
   const [datosUsuario, setDatosUsuario] = useState(initialState);
+  //estado para guardar id de la compra realizada
   const [idCompra, setIdCompra] = useState('');
   
 
   useEffect(() => {
+    //verifico que exista al menos 1 item
     if(items.length>0){
       setShow(true)
     }
     let partial = 0
+    // recorro los items sumar el total a pagar 
     items.forEach(item => {
       partial = partial + (item.price*item.quantity)
     });
+    // y lo guardo en el estado total
     settotal(partial)
   }, []);
 
@@ -83,9 +91,9 @@ const Cart = props => {
             </table>
             <form onSubmit={Submit} className={style.form}>
               
-              <TextField name='nombre' value={datosUsuario.nombre} onChange={handleOnChange} className={style.input} id="outlined-basic" label="Nombre" variant="outlined" />
-              <TextField name='telefono' value={datosUsuario.telefono} onChange={handleOnChange} className={style.input} id="outlined-basic" label="telefono" variant="outlined" />
-              <TextField name='email' value={datosUsuario.email} onChange={handleOnChange} className={style.input} id="outlined-basic" label="Email" variant="outlined" />
+              <TextField name='nombre' value={datosUsuario.nombre} onChange={handleOnChange} className={style.input} id="outlined-basic" label="Nombre" variant="outlined" required/>
+              <TextField name='telefono' value={datosUsuario.telefono} onChange={handleOnChange} className={style.input} id="outlined-basic" label="telefono" variant="outlined" required/>
+              <TextField name='email' value={datosUsuario.email} onChange={handleOnChange} className={style.input} id="outlined-basic" label="Email" variant="outlined" required/>
               <button className={style.button_form} >Terminar Mi Compra</button>  
             </form>
 

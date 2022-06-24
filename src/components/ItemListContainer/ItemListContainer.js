@@ -11,6 +11,7 @@ import { db } from '../../firebase/firebaseConfig'
 
 
 //Contenedor lista de productos
+//Hago la query a firbase para mandarla a itemList
 function ItemListContainer({ greeting }) {
   //States
   //*State de productos y control spinner
@@ -24,7 +25,7 @@ function ItemListContainer({ greeting }) {
   useEffect(() => {
     setIsLoading(true)
     const getProductoss = async () => {
-      //Si viene id de categoria por paramentro
+      //Si viene id de categoria por paramentro(veo por categoria)
       if (id) {
         const q = query(collection(db,'productos'),where('category', "==", id))
         const docs = [];
@@ -35,7 +36,7 @@ function ItemListContainer({ greeting }) {
         setProductos(docs)
         setIsLoading(false);
       }
-      //Si NO viene id de categoria por paramentro
+      //Si NO viene id de categoria por paramentro(Todos los productos)
       else{
         const q = query(collection(db,'productos'))
         const docs = [];

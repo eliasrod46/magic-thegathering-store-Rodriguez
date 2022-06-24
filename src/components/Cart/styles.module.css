@@ -113,3 +113,18 @@ font-family: 'Yusei Magic', sans-serif;
   margin-top: 40px;
 }
 
+.form .button_form{
+  text-decoration: none;
+  font-size: 20px;
+  background-color: rgb(2, 2, 72);
+  border-radius: 8px;
+  padding: 2px;
+  box-shadow: 0 0 5px white;
+  color: grey;
+  font-family: 'Yusei Magic', sans-serif;
+  font-weight: 500;
+}
+.form .button_form:hover{
+    box-shadow: 0 0 5px white inset, 0 0 5px black;
+    cursor: pointer;    
+}

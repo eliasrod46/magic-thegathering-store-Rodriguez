@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import style from "./styles.module.css"
 
-
+//Pantalla de confirmacion de articulo eliminado
 const Del = () => {
   return (
     <>

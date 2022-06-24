@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Spiner from "../Spiner/Spiner";
 //Firebase
-import { collection, query, getDocs, where } from 'firebase/firestore'
+import { collection, query, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/firebaseConfig'
 
 //*Componente donde pido datos de producto y envio a item detail
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
       const q = query(collection(db,'productos'))
       const querySnapshot = await getDocs(q)
       querySnapshot.forEach(doc => {
-        if(doc.id == id){
+        if(doc.id === id){
           docs= {...doc.data(), id: doc.id}
         }
         

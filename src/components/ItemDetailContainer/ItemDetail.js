@@ -23,6 +23,7 @@ const ItemDetail = ({ data }) => {
     quantity:cantCompra,
   }
 
+  //funcion que se ejecuta al hacer click en afgregar al carrrito esta recibe la cantidad de articulos seleccionado 
   const onAdd = (cant) => {
     //guardo la cantidad a comprar en el state
     setCantCompra(cant);
@@ -48,6 +49,7 @@ const ItemDetail = ({ data }) => {
           <div className={style.price}>Precio: ${data.price}</div>
 
           {cantCompra === 0 ? (
+            // mando la funcion onAdd al contador para ejecutarla hacer hacer click en agregar al carrito
             <ItemCount stock={data.stock} compra={onAdd}/>
           ) : (
             <>

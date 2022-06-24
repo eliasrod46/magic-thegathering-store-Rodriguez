@@ -1,3 +1,5 @@
+//Mensaje de confirmacion de compra de Material UI
+
 import * as React from 'react';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';

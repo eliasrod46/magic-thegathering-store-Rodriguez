@@ -46,9 +46,21 @@ font-family: 'Yusei Magic', sans-serif;
   margin-top: 20px;
 }
 
-.card_container .card_container_send .card_send {
-  font-family: cursive;
-  font-weight: 700;
+
+.card_container .card_container_send .card_send{
+  text-decoration: none;
+  font-size: 15px;
+  background-color: rgb(39, 39, 39);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 0 5px white;
+  color: rgb(160, 160, 160);
+  font-family: 'Yusei Magic', sans-serif;
+  font-weight: 200;
+}
+.card_container .card_container_send .card_send:hover{
+  box-shadow: 0 0 5px white inset, 0 0 5px black;
+  cursor: pointer;    
 }
 
 .card_container .card_container_img .card_img {
